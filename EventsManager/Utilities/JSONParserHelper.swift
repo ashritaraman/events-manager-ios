@@ -37,6 +37,16 @@ class JSONParserHelper {
             let orgInstance = Organization.init(id: pk, name: name, description: description, avatar: URL(string: mediaAddress)!, website: mediaAddress, email: contact)
             return orgInstance
         }
+    }
+    public static func parseLocation(json: JSON) -> Location? {
+        if let pk = json["pk"].int,
+            let buildingName = json["building"].string,
+            let roomName = json["room"].string,
+            let placeId = json["place_id"].string {
+            
+            let locationInstance = Location.init(id: pk, building: buildingName, room: roomName, placeId: placeId)
+            return locationInstance
+        }
         else {
             return nil
         }

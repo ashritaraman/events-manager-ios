@@ -51,5 +51,5 @@ class Endpoint {
             return baseURL + "org/" + queryParams[QueryParam.orgPk]! + "/events/"
         }
     }
-    
+
 }

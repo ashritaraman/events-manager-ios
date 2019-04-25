@@ -147,10 +147,9 @@ class Internet {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    print("SUCCESS: \(json)")
                     completion(JSONParserHelper.parseEvent(json: json))
                 case .failure(let error):
-                    print("ERROR: \(error)")
+                    print(error)
                     completion(nil)
                 }
         }
@@ -213,10 +212,9 @@ class Internet {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    print("SUCCESS: \(json)")
                     completion(JSONParserHelper.parseTag(json: json))
                 case .failure(let error):
-                    print("ERROR: \(error)")
+                    print(error)
                     completion(nil)
                 }
             }
